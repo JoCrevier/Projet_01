@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://b8tthv17vo4my"]
+[gd_scene load_steps=21 format=3 uid="uid://b8tthv17vo4my"]
 
 [ext_resource type="Script" uid="uid://kf0dqfnaqhf2" path="res://bouton_01.gd" id="1_eji2g"]
+[ext_resource type="AudioStream" uid="uid://brg71laybgiuf" path="res://Sounds/bbc_bicycle---_07037424.mp3" id="2_rhbdi"]
 [ext_resource type="Script" uid="uid://buo1d5ucawaa5" path="res://bouton_02.gd" id="2_ws03h"]
 [ext_resource type="Script" uid="uid://dhvpaygbaut2" path="res://bt_son_02.gd" id="3_663it"]
 [ext_resource type="Script" uid="uid://bs0uaa6728dsf" path="res://bt_anim_02.gd" id="4_uewp5"]
@@ -12,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dsdchwok3cijn" path="res://assets/2d_sprite_animation_assets/run_animation/run-6.png" id="10_jky81"]
 [ext_resource type="Texture2D" uid="uid://benm2j1x6esei" path="res://assets/2d_sprite_animation_assets/run_animation/run-7.png" id="11_rjokc"]
 [ext_resource type="Texture2D" uid="uid://cc0pdya45832d" path="res://assets/2d_sprite_animation_assets/run_animation/run-8.png" id="12_8cb4t"]
+[ext_resource type="AudioStream" uid="uid://d24vklpmm4xvo" path="res://Sounds/bbc_unidentifi_nhu0505609.mp3" id="13_bletn"]
 [ext_resource type="Texture2D" uid="uid://cqda2xw4ih76n" path="res://assets/2d_animation_player-run.png" id="13_euasm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_miyq1"]
@@ -49,6 +51,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_663it"]
 size = Vector2(188, 190)
 
+[sub_resource type="Animation" id="Animation_uewp5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_663it"]
 resource_name = "Walk"
 length = 0.16
@@ -64,21 +81,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
-}
-
-[sub_resource type="Animation" id="Animation_uewp5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rhbdi"]
@@ -99,7 +101,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 363.0
 offset_bottom = 125.0
-tooltip_text = "Appuyer pour jouer le son 
+tooltip_text = "Appuyer /ou appuyer sur 3 pour jouer le son 
 "
 script = ExtResource("1_eji2g")
 
@@ -118,12 +120,15 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Audio_01" type="AudioStreamPlayer" parent="BT_Son01"]
+stream = ExtResource("2_rhbdi")
+
 [node name="BT_Anim01" type="Button" parent="."]
 layout_mode = 0
 offset_left = 787.0
 offset_right = 1150.0
 offset_bottom = 125.0
-tooltip_text = "Appuyer pour jouer une animation 
+tooltip_text = "Appuyer /ou appuyer sur 1 pour jouer une animation 
 "
 script = ExtResource("2_ws03h")
 
@@ -152,7 +157,7 @@ layout_mode = 0
 offset_top = 523.0
 offset_right = 365.0
 offset_bottom = 645.0
-tooltip_text = "Appuyer pour jouer le son "
+tooltip_text = "Appuyer /ou appuyer sur 4 pour jouer le son "
 toggle_mode = true
 script = ExtResource("3_663it")
 
@@ -168,13 +173,16 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Audio_02" type="AudioStreamPlayer" parent="BT_Son02"]
+stream = ExtResource("13_bletn")
+
 [node name="BT_Anim02" type="Button" parent="."]
 layout_mode = 0
 offset_left = 792.0
 offset_top = 524.0
 offset_right = 1151.0
 offset_bottom = 649.0
-tooltip_text = "Appuyer pour jouer une animation "
+tooltip_text = "Appuyer /ou appuyer sur 2 pour jouer une animation "
 toggle_mode = true
 script = ExtResource("4_uewp5")
 
