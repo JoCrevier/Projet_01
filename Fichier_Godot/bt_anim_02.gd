@@ -9,8 +9,8 @@ func _on_toggled(_toggled_on: bool) -> void:
 		$"CharacterBody2D/AnimationPlayer".stop() # Cherche dans le CharacterBody2D --> l'AnimationPlayer --> arrête l'animation
 	pass # Replace with function body.
 	
-func _process(_delta): # équivalent d'un event tick
-	if Input.is_action_just_pressed("Animation_02"):
+func _input(event): # équivalent d'un event tick
+	if event.is_action_pressed("Animation_02"):
 		if is_anim_playing: # Si l'animation joue, alors -->
 			$"CharacterBody2D/AnimationPlayer".stop() # Cherche dans le CharacterBody2D --> l'AnimationPlayer --> arrête l'animation
 		else:
