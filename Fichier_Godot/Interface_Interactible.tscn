@@ -98,7 +98,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BT_Son01" type="Button" parent="."]
-layout_mode = 0
+layout_mode = 1
 offset_right = 363.0
 offset_bottom = 125.0
 tooltip_text = "Appuyer /ou appuyer sur 3 pour jouer le son 
@@ -124,10 +124,13 @@ vertical_alignment = 1
 stream = ExtResource("2_rhbdi")
 
 [node name="BT_Anim01" type="Button" parent="."]
-layout_mode = 0
-offset_left = 787.0
-offset_right = 1150.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -363.0
 offset_bottom = 125.0
+grow_horizontal = 0
 tooltip_text = "Appuyer /ou appuyer sur 1 pour jouer une animation 
 "
 script = ExtResource("2_ws03h")
@@ -153,10 +156,13 @@ scale = Vector2(2.05224, 2.05224)
 sprite_frames = SubResource("SpriteFrames_miyq1")
 
 [node name="BT_Son02" type="Button" parent="."]
-layout_mode = 0
-offset_top = 523.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -122.0
 offset_right = 365.0
-offset_bottom = 645.0
+grow_vertical = 0
 tooltip_text = "Appuyer /ou appuyer sur 4 pour jouer le son "
 toggle_mode = true
 script = ExtResource("3_663it")
@@ -177,11 +183,16 @@ vertical_alignment = 1
 stream = ExtResource("13_bletn")
 
 [node name="BT_Anim02" type="Button" parent="."]
-layout_mode = 0
-offset_left = 792.0
-offset_top = 524.0
-offset_right = 1151.0
-offset_bottom = 649.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -359.0
+offset_top = -125.0
+grow_horizontal = 0
+grow_vertical = 0
 tooltip_text = "Appuyer /ou appuyer sur 2 pour jouer une animation "
 toggle_mode = true
 script = ExtResource("4_uewp5")
